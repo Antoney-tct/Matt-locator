@@ -15,6 +15,22 @@
 .principles-grid span { font-family: var(--f-data); color: var(--text-on-paper-mid); font-size: 0.72rem; }
 .principles-grid h3 { margin-top: 42px; font-size: 1.25rem; }
 .principles-grid p { margin-top: 10px; color: var(--text-on-paper-mid); font-size: 0.9rem; }
+.about-lists { padding-top: 94px; padding-bottom: 94px; }
+.lists-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 60px; align-items: end; margin-bottom: 30px; }
+.lists-heading .section-kicker { grid-column: 1 / -1; }
+.lists-heading h2 { max-width: 12ch; font-size: clamp(2rem, 4vw, 3.5rem); }
+.lists-heading > p:last-child { max-width: 370px; color: var(--text-mid); font-size: 0.95rem; }
+.lists-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.list-example { padding: 28px; background: var(--ink-raised); border: var(--edge); border-radius: var(--r-md); }
+.list-label { color: var(--marigold); font: 600 0.68rem var(--f-data); text-transform: uppercase; letter-spacing: 0.04em; }
+.list-example h3 { margin-top: 12px; font-size: 1.25rem; }
+.list-example ol, .list-example ul { margin: 18px 0 0; padding-left: 22px; color: var(--text-mid); font-size: 0.9rem; }
+.list-example li + li { margin-top: 8px; }
+.list-example ol li::marker { color: var(--coral); font-family: var(--f-data); font-weight: 600; }
+.list-example ul li::marker { color: var(--teal); }
+.list-example dl { margin: 18px 0 0; font-size: 0.9rem; }
+.list-example dt { color: var(--text-hi); font-family: var(--f-display); font-weight: 600; }
+.list-example dd { margin: 3px 0 12px; color: var(--text-mid); }
 .about-team { padding: 94px 0 0; }
 .team-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 30px; }
 .team-heading h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
@@ -30,3 +46,4 @@
 .about-cta { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-top: 86px; padding-bottom: 86px; }
 .about-cta h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
 @media (max-width: 760px) { .about-hero { min-height: 560px; } .about-hero-content { padding-bottom: 52px; } .about-story { grid-template-columns: 1fr; gap: 28px; padding-top: 64px; padding-bottom: 64px; } .principles-grid { grid-template-columns: 1fr; } .principles-grid article { min-height: auto; } .principles-grid h3 { margin-top: 24px; } .team-heading { align-items: flex-start; flex-direction: column; gap: 16px; } .team-grid { grid-template-columns: 1fr; } .developer-card { grid-template-columns: 38% 1fr; } .developer-card img { min-height: 260px; } .about-cta { align-items: flex-start; flex-direction: column; padding-top: 60px; padding-bottom: 60px; } }
+@media (max-width: 760px) { .lists-heading { grid-template-columns: 1fr; gap: 16px; } .lists-heading .section-kicker { grid-column: auto; } .lists-grid { grid-template-columns: 1fr; } .about-lists { padding-top: 64px; padding-bottom: 64px; } }
