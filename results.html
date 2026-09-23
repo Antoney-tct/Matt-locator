@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Available matatus — Matatu Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23FFB627%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/results.css">
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><span data-icon="bus"></span></span>
+      <span>Matatu Tracker<small>ROUTE · TRACK · TICKET</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Search</a>
+      <a href="tracking.html">Live tracking</a>
+      <a href="about.html">About</a>
+      <a href="index.html#how-it-works">How it works</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+      <span class="nav-toggle-lines"></span>
+    </button>
+  </div>
+</header>
+
+<main class="container results-main">
+
+  <div class="results-head">
+    <div>
+      <p class="section-kicker" id="results-count">Searching…</p>
+      <h1 class="results-title" id="results-title">Finding your route</h1>
+    </div>
+    <a href="index.html" class="btn btn-ghost btn-sm" id="edit-search">
+      <span data-icon="search"></span> Edit search
+    </a>
+  </div>
+
+  <div id="results-list" class="results-list"></div>
+
+  <div id="empty-state" class="empty-state" hidden>
+    <span data-icon="alert"></span>
+    <h3>No direct route between those two stages yet</h3>
+    <p>Try Nairobi CBD as your destination, or pick one of the covered corridors below.</p>
+    <div class="badge-row" id="fallback-routes"></div>
+  </div>
+
+</main>
+
+<footer class="sitefoot">
+  <div class="container">
+    <span>Matatu Tracker — a BBIT web programming prototype.</span>
+    <span>Built with HTML, CSS, JavaScript &amp; Leaflet.js</span>
+  </div>
+</footer>
+
+<script src="js/routes.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/results.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

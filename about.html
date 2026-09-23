@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Matatu Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23FFB627%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+<header class="topnav">
+  <div class="container topnav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"><span data-icon="bus"></span></span><span>Matatu Tracker<small>ROUTE · TRACK · TICKET</small></span></a>
+    <nav class="navlinks">
+      <a href="index.html">Search</a>
+      <a href="tracking.html">Live tracking</a>
+      <a href="about.html" class="is-active">About</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+      <span class="nav-toggle-lines"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero">
+    <div class="about-hero-image" aria-hidden="true"></div>
+    <div class="about-hero-shade"></div>
+    <div class="container about-hero-content">
+      <p class="section-kicker">A clearer way to move</p>
+      <h1>Built around the small decisions that make a journey feel easier.</h1>
+      <p>Matatu Tracker brings route search, vehicle visibility, seat booking, and digital tickets into one simple flow for Nairobi commuters.</p>
+    </div>
+  </section>
+
+  <section class="about-story container">
+    <div class="about-story-intro">
+      <p class="section-kicker">Why it exists</p>
+      <h2>Less guessing at the stage. More confidence on the road.</h2>
+    </div>
+    <div class="about-story-copy">
+      <p>Public transport is full of useful information, but it is often scattered between stage signs, conversations, and waiting. This prototype imagines what happens when the essentials are collected in one place.</p>
+      <p>Search a corridor, compare the available vehicles, see a simulated approach on the map, and reserve a seat before you leave home.</p>
+    </div>
+  </section>
+
+  <section class="about-principles">
+    <div class="container">
+      <div class="principles-grid">
+        <article><span>01</span><h3>Useful first</h3><p>The interface puts routes, fares, seats, and departure information where a commuter needs them.</p></article>
+        <article><span>02</span><h3>Clear by design</h3><p>Strong labels and calm steps make the journey from search to ticket easy to follow.</p></article>
+        <article><span>03</span><h3>Honest prototype</h3><p>Vehicle locations and M-Pesa payments are simulations, clearly marked so the experience stays trustworthy.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-team">
+    <div class="container">
+      <div class="team-heading">
+        <div>
+          <p class="section-kicker">The people behind it</p>
+          <h2>Meet the developers.</h2>
+        </div>
+        <p>Our team combined practical web development with a close look at how people actually move through Nairobi.</p>
+      </div>
+      <div class="team-grid">
+        <article class="developer-card">
+          <img src="images/photo2.jpg"  alt="Portrait of the frontend developer">
+          <div class="developer-card-body">
+            <p class="developer-role">Frontend developer</p>
+            <h3>Antoney Ouko</h3>
+            <p>Focused on the responsive interface, route search experience, visual system, and the small details that make the tracker easy to use on any screen.</p>
+          </div>
+        </article>
+        <article class="developer-card">
+          <img src="images/Denis.png" alt="Portrait of the systems developer">
+          <div class="developer-card-body">
+            <p class="developer-role">Systems and product developer</p>
+            <h3>Denis Ombima</h3>
+            <p>Focused on route data, vehicle tracking, seat booking, digital tickets, and shaping the product around a reliable commuter journey.</p>
+          </div>
+        </article>
+      </div>
+      <p class="team-note">Our Developers have the best hands-on experience to ensure that the system goes hand in hand with the consumers delightment and expectated outcomes .</p>
+    </div>
+  </section>
+
+  <section class="about-cta container">
+    <div><p class="section-kicker">Ready when you are</p><h2>Find your next route.</h2></div>
+    <a class="btn btn-primary" href="index.html"><span data-icon="search"></span> Search matatus</a>
+  </section>
+</main>
+
+<footer class="sitefoot"><div class="container"><span>Matatu Tracker — a BBIT web programming prototype.</span><span>Built with HTML, CSS, JavaScript &amp; Leaflet.js</span></div></footer>
+<script src="js/routes.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

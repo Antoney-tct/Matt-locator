@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your ticket — Matatu Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23FFB627%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/ticket.css">
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+<header class="topnav no-print">
+  <div class="container topnav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><span data-icon="bus"></span></span>
+      <span>Matatu Tracker<small>ROUTE · TRACK · TICKET</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Search</a>
+      <a href="tracking.html">Live tracking</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+      <span class="nav-toggle-lines"></span>
+    </button>
+  </div>
+</header>
+
+<main class="container ticket-main">
+
+  <div class="ticket-intro no-print" id="ticket-intro">
+    <span class="pill pill-teal"><span data-icon="check"></span> Booking confirmed</span>
+    <h1>Your seat is booked.</h1>
+    <p class="muted">Show this QR code to the conductor when boarding, or track the vehicle live before it arrives.</p>
+  </div>
+
+  <div id="ticket-mount"></div>
+
+  <div class="ticket-actions no-print" id="ticket-actions" hidden>
+    <button class="btn btn-primary" id="print-btn"><span data-icon="printer"></span> Print / save ticket</button>
+    <a class="btn btn-ghost" id="track-link" href="#"><span data-icon="pin"></span> Track this vehicle</a>
+    <a class="btn btn-ghost" href="index.html"><span data-icon="search"></span> Book another trip</a>
+  </div>
+
+  <div id="no-ticket" class="empty-state" hidden>
+    <span data-icon="alert"></span>
+    <h3>Ticket not found</h3>
+    <p>This ticket may have been booked on a different device — bookings are stored on the device that made them.</p>
+    <a class="btn btn-primary" href="index.html">Book a trip</a>
+  </div>
+
+</main>
+
+<footer class="sitefoot no-print">
+  <div class="container">
+    <span>Matatu Tracker — a BBIT web programming prototype.</span>
+    <span>Built with HTML, CSS, JavaScript &amp; Leaflet.js</span>
+  </div>
+</footer>
+
+<script src="js/routes.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/notifications.js"></script>
+<script src="lib/qrcode.js"></script>
+<script src="js/ticket.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Select your seat — Matatu Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23FFB627%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><span data-icon="bus"></span></span>
+      <span>Matatu Tracker<small>ROUTE · TRACK · TICKET</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Search</a>
+      <a href="tracking.html">Live tracking</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+      <span class="nav-toggle-lines"></span>
+    </button>
+  </div>
+</header>
+
+<main class="container booking-main" id="booking-main">
+  <p class="section-kicker">Book your seat</p>
+  <h1 class="booking-title" id="vehicle-heading">Loading vehicle…</h1>
+
+  <div class="booking-grid">
+
+    <section class="panel seat-panel">
+      <div class="seat-panel-head">
+        <h2>Choose a seat</h2>
+        <div class="seat-legend">
+          <span><i class="dot dot-free"></i> Available</span>
+          <span><i class="dot dot-taken"></i> Taken</span>
+          <span><i class="dot dot-you"></i> Your seat</span>
+        </div>
+      </div>
+      <div class="minibus">
+        <div class="minibus-front">
+          <span data-icon="wheel" class="wheel-icon"></span>
+          <span class="driver-label">Driver</span>
+        </div>
+        <div class="seat-grid" id="seat-grid"></div>
+      </div>
+    </section>
+
+    <aside class="panel summary-panel">
+      <h2>Trip summary</h2>
+      <dl class="summary-list" id="summary-list"></dl>
+
+      <form id="passenger-form" class="passenger-form">
+        <div class="field-plain">
+          <label class="field-label" for="pax-name">Passenger name</label>
+          <input id="pax-name" type="text" required placeholder="e.g. Antoney Ouko" autocomplete="name">
+        </div>
+        <div class="field-plain">
+          <label class="field-label" for="pax-phone">M-Pesa phone number</label>
+          <input id="pax-phone" type="tel" required placeholder="07XX XXX XXX" autocomplete="tel">
+        </div>
+
+        <div class="fare-line">
+          <span>Total due</span>
+          <strong id="fare-total">KES 0</strong>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="pay-btn" disabled>
+          <span data-icon="phone"></span> Pay with M-Pesa
+        </button>
+        <p class="seat-hint" id="seat-hint">Select a seat above to continue.</p>
+      </form>
+    </aside>
+
+  </div>
+</main>
+
+<!-- M-Pesa simulation modal -->
+<div class="modal-veil" id="modal-veil" hidden>
+  <div class="mpesa-modal panel" role="dialog" aria-modal="true" aria-labelledby="mpesa-title">
+    <div id="mpesa-step-prompt">
+      <div class="mpesa-logo">M-PESA</div>
+      <h3 id="mpesa-title">STK push sent (simulated)</h3>
+      <p class="muted">A prompt has been sent to <strong id="mpesa-phone">—</strong>. Enter your M-Pesa PIN on your phone to pay <strong id="mpesa-amount">—</strong>.</p>
+      <div class="mpesa-pin-row" id="pin-dots">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <p class="muted small">This is a simulation for a class project — no real prompt was sent.</p>
+    </div>
+    <div id="mpesa-step-success" hidden>
+      <div class="success-tick"><span data-icon="check"></span></div>
+      <h3>Payment confirmed</h3>
+      <p class="muted">Generating your digital ticket…</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/routes.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

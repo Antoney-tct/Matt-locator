@@ -1,0 +1,80 @@
+/* ==========================================================================
+   results.css
+   ========================================================================== */
+
+.results-main { padding: 44px 0 40px; }
+
+.results-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.results-title {
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  color: var(--text-hi);
+}
+
+.route-group { margin-bottom: 40px; }
+
+.route-group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.route-group-head h2 { font-size: 1.12rem; color: var(--text-hi); }
+.route-group-head .corridor { font-size: 0.8rem; color: var(--text-low); }
+
+.vehicle-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: var(--ink-raised);
+  border: var(--edge);
+  border-left: 5px solid var(--ink-line);
+  border-radius: var(--r-md);
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.vehicle-sacco { display: flex; flex-direction: column; gap: 4px; flex: 1 1 190px; min-width: 170px; }
+.vehicle-sacco strong { font-size: 0.98rem; color: var(--text-hi); }
+.vehicle-sacco .plate { font-family: var(--f-data); font-size: 0.8rem; color: var(--text-low); }
+
+.vehicle-amenities { display: flex; flex-wrap: wrap; gap: 6px; flex: 1 1 140px; }
+
+.vehicle-metrics { display: flex; gap: 26px; flex: 2 1 320px; }
+
+.vehicle-metric { display: flex; flex-direction: column; gap: 4px; min-width: 84px; }
+.vehicle-metric .label { font-size: 0.68rem; color: var(--text-low); font-weight: 700; letter-spacing: 0.02em; }
+.vehicle-metric .value { font-size: 1.02rem; font-weight: 700; color: var(--text-hi); font-family: var(--f-data); }
+
+.seat-bar {
+  width: 84px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--ink-line);
+  margin-top: 6px;
+  overflow: hidden;
+}
+.seat-bar-fill { height: 100%; border-radius: 4px; }
+
+@media (max-width: 700px) {
+  .vehicle-row { padding: 16px; }
+  .vehicle-metrics { gap: 18px; }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 70px 20px;
+  color: var(--text-mid);
+}
+.empty-state .icon { width: 34px; height: 34px; color: var(--coral); margin: 0 auto 18px; }
+.empty-state h3 { color: var(--text-hi); margin-bottom: 10px; font-family: var(--f-display); font-size: 1.2rem; }
+.empty-state p { max-width: 42ch; margin: 0 auto 26px; }
+.empty-state .badge-row { justify-content: center; }

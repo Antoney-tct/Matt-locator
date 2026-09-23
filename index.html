@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matatu Tracker — find your route, watch it come, board with a ticket</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23FFB627%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><span data-icon="bus"></span></span>
+      <span>Matatu Tracker<small>ROUTE · TRACK · TICKET</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html" class="is-active">Search</a>
+      <a href="tracking.html">Live tracking</a>
+      <a href="about.html">About</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+      <span class="nav-toggle-lines"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-label="Matatu Tracker introduction">
+    <div class="hero-media" aria-hidden="true">
+      <div class="hero-slide hero-slide-image is-active" style="--slide-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1800&q=85');"></div>
+      <div class="hero-slide hero-slide-image" style="--slide-image: url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1800&q=85');"></div>
+      <div class="hero-slide hero-slide-video">
+        <video muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=85">
+          <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="hero-shade"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-live"><span></span> Network live <strong>24 vehicles moving</strong></div>
+        <span class="hero-eyebrow"><span data-icon="pin"></span> Nairobi routes, made clearer</span>
+        <h1>Move through the city with a little more certainty.</h1>
+        <p class="hero-sub">Compare matatus, watch your route approach, and keep your seat on one calm, useful screen.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#search-form"><span data-icon="search"></span> Find my route</a>
+          <a class="hero-text-link" href="tracking.html">See live tracking <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>10</strong><span>routes covered</span></div>
+          <div><strong>24</strong><span>vehicles tracked</span></div>
+          <div><strong>26</strong><span>stages mapped</span></div>
+        </div>
+      </div>
+
+      <form class="search-panel panel" id="search-form" novalidate>
+        <div class="search-row">
+          <div class="field">
+            <span data-icon="pin"></span>
+            <label class="sr-only" for="from">From</label>
+            <select id="from" required></select>
+          </div>
+          <button type="button" class="swap-btn" id="swap-btn" title="Swap from and to" aria-label="Swap from and to">
+            <span data-icon="swap"></span>
+          </button>
+          <div class="field">
+            <span data-icon="pin"></span>
+            <label class="sr-only" for="to">To</label>
+            <select id="to" required></select>
+          </div>
+        </div>
+
+        <div class="search-row two-up">
+          <div class="field">
+            <label class="field-label" for="depart-time">Travel time</label>
+            <span data-icon="clock"></span>
+            <select id="depart-time">
+              <option value="now" selected>Leave now</option>
+              <option value="15">In 15 minutes</option>
+              <option value="30">In 30 minutes</option>
+              <option value="60">In 1 hour</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="seats-needed">Seats</label>
+            <span data-icon="users"></span>
+            <select id="seats-needed">
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field trip-name-field">
+          <label class="field-label" for="trip-name">Save as</label>
+          <span data-icon="route"></span>
+          <input id="trip-name" type="text" maxlength="36" placeholder="e.g. Home to CBD">
+        </div>
+
+        <p class="search-error" id="search-error" hidden>Choose two different stages to search a route.</p>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <span data-icon="search"></span> Search matatus
+        </button>
+        <button type="button" class="btn btn-ghost btn-block" id="save-trip-btn">
+          <span data-icon="route"></span> Save this trip
+        </button>
+        <p class="save-trip-status" id="save-trip-status" role="status" aria-live="polite"></p>
+      </form>
+
+    </div>
+    <div class="hero-controls container">
+      <div class="hero-caption"><span id="hero-slide-label">The road ahead, less uncertain.</span><span class="hero-caption-line"></span><span>01 / 03</span></div>
+      <div class="hero-dots" aria-label="Hero slides">
+        <button class="is-active" type="button" aria-label="Show slide 1"></button>
+        <button type="button" aria-label="Show slide 2"></button>
+        <button type="button" aria-label="Show slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="saved-trips" id="saved-trips-section" hidden>
+    <div class="container">
+      <div class="saved-trips-head">
+        <div><p class="section-kicker">Your shortcuts</p><h2>Saved trips</h2></div>
+        <span class="saved-trips-note">Stored on this device</span>
+      </div>
+      <div class="saved-trip-list" id="saved-trip-list"></div>
+    </div>
+  </section>
+
+  <section class="corridor-strip">
+    <div class="container">
+      <p class="section-kicker">Popular routes right now</p>
+      <div class="badge-row" id="popular-routes"></div>
+    </div>
+  </section>
+
+  <section class="how" id="how-it-works">
+    <div class="container">
+      <p class="section-kicker">How it works</p>
+      <h2 class="how-title">Four steps, no waiting at the stage guessing.</h2>
+
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-num">1</div>
+          <h3>Search a route</h3>
+          <p>Tell us where you're starting and where you're headed — we show every sacco running that road.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">2</div>
+          <h3>Compare vehicles</h3>
+          <p>Fares, seats left, and departure estimates side by side, so you're not choosing blind.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">3</div>
+          <h3>Watch it approach</h3>
+          <p>A live map simulation shows the vehicle moving through stages toward you.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">4</div>
+          <h3>Board with a ticket</h3>
+          <p>Pick a seat, pay by simulated M-Pesa, and get a QR ticket — no cash needed at the door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proto-note">
+    <div class="container proto-note-inner">
+      <span data-icon="info"></span>
+      <p>This is a class prototype built for <strong>BSD 227 – Internet Programming I</strong>. Vehicle positions are simulated, and M-Pesa payment is a simulation — no real transport or money moves through this page.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="sitefoot">
+  <div class="container">
+    <span>Matatu Tracker — a BBIT web programming prototype.</span>
+    <span>Built with HTML, CSS, JavaScript &amp; Leaflet.js</span>
+  </div>
+</footer>
+
+<script src="js/routes.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/home.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
